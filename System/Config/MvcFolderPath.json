@@ -1,0 +1,7 @@
+{
+    "__Config__":"/Mvc/Config",
+    "__Controller__":"/Mvc/Controller",
+    "__Model__":"/Mvc/Model",
+    "__Router__":"/Mvc/Route",
+    "__View__":"/Mvc/View"
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Error</title>
+	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			font-family: sans-serif;
+			font-weight: lighter;
+			font-size: 16px;
+			list-style: none;
+		}
+
+		body{
+			background-color: #ecf0f1;
+		}
+		header{
+			width: 100%;
+			height: auto;
+			background-color: #e74c3c;
+            overflow: auto;
+		}
+
+		header .errorType{
+			height: auto;
+			width: 80%;
+			padding: 10px 20px;
+			color: #ffffff;
+			font-size: 40px;
+			background-color: #c0392b;
+			padding: 5px 10%;
+			text-align: left;
+			font-family: 'Quicksand', sans-serif;
+			font-weight: bold;
+		}
+
+		header .errorType span{
+			font-size: 25px;
+			padding: 10px 20px;
+			font-family: 'Quicksand', sans-serif;
+			font-weight: lighter;
+			float: right;
+		}
+
+		header .errorMessage{
+			display: block;
+			float: right;
+			width: 80%;
+			padding: 20px 10% 40px 10%;
+			height: auto;
+			color: #ffffff;
+			font-weight: lighter;
+			text-align: right;
+			margin-top: 20px;
+			font-size: 20px;
+		}
+
+		.errorDetail{
+			height: auto;
+			margin: 20px auto;
+			width: 80%;
+			background-color: #ffffff;
+			overflow: auto;
+
+		}
+
+		.errorDetail .fileName{
+			width: calc(100% - 20px);
+			height: auto;
+			float: left;
+			padding: 5px 10px;
+			color: #ffffff;
+			background-color: #0a3d62;
+			font-weight: normal;
+		}
+
+		.errorDetail .fileName .fileLine{
+			float: right;
+			font-weight: normal;
+		}
+		
+		.errorDetail .fileViewer{
+			width: 90%;
+			height: auto;
+			padding: 10px 5%;
+			overflow: auto;
+			background-color: #2d3436;
+		}
+		ol{
+			display: block;
+  			list-style-type: decimal;
+			color: #ffffff;
+		}
+		ol li{
+			list-style-type: decimal;
+			display: list-item;
+			list-style-position: outside;
+		}
+
+	</style>
+</head>
+<body>
+	<header>
+		<div class="errorType">
+			{{ type }}
+			<span>sweet php</span>
+		</div>
+
+		<div class="errorMessage">
+			{{ message }}
+		</div>
+	</header>
+
+	<div class="errorDetail">
+		<div class="fileName">
+			File: {{ file }}
+			<div class="fileLine">
+				Line: {{ line }}
+			</div>
+		</div>
+			<ol class="fileViewer" type="1" start="{{ line-5 }}">
+				{% for line in readedFile %}
+					{% if loop.index == 5%}
+						<li style="background-color: #e74c3c;">{{ line }}</li>
+					{% else %}
+						<li>{{ line }}</li>
+					{% endif %}
+				{% endfor %}
+			</ol>
+	</div>
+</body>
+</html>
