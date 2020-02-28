@@ -1,5 +1,5 @@
 # Sweet php microframework - Türkçe
-Sweet php microframewrok bir mvc frameworktür. Paylaşımlı hostinglerde kullanılmak için üretildi. Çok büyük bir mimari yapısı yok. Bu yüzden oldukça az kaynak kullanmaktadır.
+Sweet php microframework bir mvc frameworktür. Paylaşımlı hostinglerde kullanılmak için üretildi. Çok büyük bir mimari yapısı yok. Bu yüzden oldukça az kaynak kullanmaktadır.
 ## Kurulum
 ```
 git clone https://github.com/ramazanogunc/sweet-php-microframework.git
@@ -8,7 +8,7 @@ Daha sonra http istekleri Public/index.php ye gelecek şekilde ayarlayınız.
 Eğer Framewrokün dizinini değiştirdiyseniz $ROOT_DIR değişkenine atanan dizini değiştmeniz gerekmektedir.
 
 ## CONFIG
-İki tane configurasyon dosyası vardır.
+İki tane konfigurasyon dosyası vardır.
 ### GENERAL
 ```
 {
@@ -25,7 +25,7 @@ databaseActive: Db sınıfını kullanabilmeniz için bu ayarın true olması ge
 ## CONTROLLER
 Microframeworkde 2 tür controller bulunmaktadır. Bu controllerlar şunlardır.
 
-**System\BaseMvc\Controller:** Normal web sayfaları için geliştirilmiş. İçerisindeki render methoduna twig themplate engine eklenmiş controllerdır.
+**System\BaseMvc\Controller:** Normal web sayfaları için geliştirilmiş. İçerisindeki render methoduna twig template engine eklenmiş controllerdır.
 
 Methodlar
 ```php
@@ -33,7 +33,7 @@ render($viewPath,$data = null) //twig tema render eder
 redirect($url) //url i yönendirmek için
 ```
 
-**System\BaseMvc\ApiController:** Api lar için geliştirilmiş. Üzerinde themplate engine bulunmayan ve otomatik tanımlı bazı header kodları alan ve json render eden controllerdır. örnekler
+**System\BaseMvc\ApiController:** Api lar için geliştirilmiş. Üzerinde template engine bulunmayan ve otomatik tanımlı bazı header kodları alan ve json render eden controllerdır. örnekler
 
 Methodlar
 ```php
@@ -64,7 +64,7 @@ echo $params[‘key’];
 }
 ```
 ## VİEW
-Microframework View olarak twig themplate engine kullanır. Twig themplate engine dökümanınna gitmek için [buraya tıklayınız.](https://twig.symfony.com/doc/3.x/)
+Microframework View olarak twig template engine kullanır. Twig template engine dökümanınna gitmek için [buraya tıklayınız.](https://twig.symfony.com/doc/3.x/)
 ## VERİTABANI
 Database sınıfı namespace i “System\Database\Db” dir.
 Singelton tasarım deseni kullanılarak yazılmıştır.
